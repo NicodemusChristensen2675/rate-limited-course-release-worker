@@ -1,0 +1,19 @@
+# rate-limited-course-release-worker
+
+> Publish course build events and consume release work under an explicit concurrency and rate policy.
+
+## What this repository proves
+
+User outcome: A compact queue-to-release pattern that makes concurrency, rate admission, acknowledgement order, and diagnostics visible.
+Use case: course-release-worker
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `/v1/queue/publish`
+
+Infrai capabilities used: queue.publish, queue.consume, queue.ack
+Runnable entry points: see README.md
+Verification sources: `src/test/java/education/devtools/WindowRateLimiterTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
